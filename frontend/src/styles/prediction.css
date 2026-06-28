@@ -1,0 +1,225 @@
+.result-card {
+  margin-top: 40px;
+  padding: 30px;
+  background:
+    rgba(255,255,255,0.05);
+  backdrop-filter:
+    blur(12px);
+  border-radius: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.prediction-badge {
+  display: inline-block;
+  padding:
+    12px 30px;
+  border-radius:
+    999px;
+  font-size: 22px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.virulent {
+  background:
+    #ff4444;
+  color: white;
+}
+
+.nonvirulent {
+  background:
+    #00c853;
+  color: white;
+}
+
+.confidence-text {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.confidence-bar {
+  width: 100%;
+  height: 20px;
+  background:
+    rgba(255,255,255,0.15);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.confidence-fill {
+  height: 100%;
+  background:
+    linear-gradient(
+      90deg,
+      #00c6ff,
+      #00d084
+    );
+}
+
+.model-info {
+  margin-top: 25px;
+}
+
+.prediction-actions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.prediction-actions button {
+  padding:
+    10px 20px;
+  border:
+    1px solid #00d4ff;
+  background:
+    transparent;
+  color:
+    #00d4ff;
+  cursor:
+    pointer;
+  border-radius:
+    8px;
+}
+
+.prediction-actions button:hover {
+  background:
+    rgba(0,212,255,0.15);
+}
+
+textarea {
+  width: 100%;
+  min-height: 300px;
+  background: white;
+  color: black;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 15px;
+  font-size: 15px;
+  font-family: monospace;
+}
+
+select {
+  background: white !important;
+  color: black !important;
+  font-weight: 600;
+}
+
+select option {
+  background: white !important;
+  color: black !important;
+  font-weight: 600;
+}
+
+.prediction-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  color: black;
+}
+
+.prediction-table th {
+  background: #64d5b0;
+  padding: 12px;
+  border: 1px solid #333;
+  text-align: center;
+}
+
+.prediction-table td {
+  padding: 12px;
+  border: 1px solid #333;
+  text-align: center;
+}
+
+.virulent-text {
+  color: red;
+  font-weight: bold;
+}
+
+.nonvirulent-text {
+  color: green;
+  font-weight: bold;
+}
+
+textarea {
+  width: 100%;
+  background: white;
+  color: black;
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 14px;
+}
+
+input[type="file"] {
+  width: 100%;
+  background: white;
+  color: black;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.example-btn,
+.clear-btn {
+  background: white;
+  color: #00897b;
+  border: 1px solid #00897b;
+  padding: 14px 30px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 25px;
+  background: white;
+  color: black;
+}
+
+.results-table th {
+  background: #66d1ae;
+  color: black;
+  font-weight: 700;
+  padding: 14px;
+  border: 1px solid #444;
+  text-align: center;
+}
+
+.results-table td {
+  padding: 12px;
+  border: 1px solid #444;
+  text-align: center;
+}
+
+.results-table tbody tr:nth-child(even) {
+  background: #f4f4f4;
+}
+
+.virulent-text {
+  color: red;
+  font-weight: 700;
+}
+
+.nonvirulent-text {
+  color: green;
+  font-weight: 700;
+}
+
+.prediction-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.prediction-header h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.prediction-header p {
+  font-size: 18px;
+  color: #d8d8d8;
+}

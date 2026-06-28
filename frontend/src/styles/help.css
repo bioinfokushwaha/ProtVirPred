@@ -1,0 +1,114 @@
+.help-page {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  color: white;
+}
+
+.help-page h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 42px;
+}
+
+.help-intro {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.8;
+  max-width: 1000px;
+  margin: 0 auto 40px auto;
+}
+
+.help-section {
+  margin-top: 50px;
+}
+
+.help-section h2 {
+  margin-bottom: 20px;
+  color: #00d4ff;
+}
+
+.help-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 15px;
+}
+
+.help-card h3 {
+  margin-bottom: 10px;
+}
+
+.help-card ul {
+  margin-left: 25px;
+}
+
+.help-example {
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.help-example pre {
+  white-space: pre-wrap;
+  color: #8ff7c9;
+}
+
+.model-list {
+  margin-left: 25px;
+  line-height: 2;
+}
+
+.faq-item {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 15px;
+}
+
+.faq-item h3 {
+  color: #00d4ff;
+  margin-bottom: 10px;
+}
+
+.faq-item p {
+  line-height: 1.7;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+  border-radius: 12px;
+  overflow: hidden;
+  background:
+    rgba(255,255,255,0.05);
+  border:
+    1px solid rgba(255,255,255,0.08);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 18px 22px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-question:hover {
+  background:
+    rgba(255,255,255,0.05);
+}
+
+.faq-answer {
+  padding: 0 22px 18px 22px;
+  color: #d8d8d8;
+  line-height: 1.8;
+}

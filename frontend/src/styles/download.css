@@ -1,0 +1,140 @@
+.download-page {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  color: white;
+}
+
+.download-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.download-header h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.download-header p {
+  color: #d5d5d5;
+  font-size: 18px;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+
+  backdrop-filter: blur(10px);
+
+  border-radius: 20px;
+
+  padding: 30px;
+
+  margin-bottom: 30px;
+}
+
+.glass-card h2 {
+  margin-bottom: 20px;
+}
+
+.download-table {
+  width: 100%;
+
+  margin-top: 20px;
+
+  border-collapse: collapse;
+
+  background: white;
+
+  color: black;
+}
+
+.download-table th {
+  background: #64d8b3;
+
+  padding: 12px;
+
+  border: 1px solid #888;
+}
+
+.download-table td {
+  padding: 12px;
+
+  border: 1px solid #888;
+
+  text-align: center;
+}
+
+.download-table button,
+.download-btn {
+  background: linear-gradient(
+    135deg,
+    #00c6ff,
+    #00ffcc
+  );
+
+  border: none;
+
+  padding: 10px 18px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  transition: 0.3s;
+}
+
+.download-table button:hover,
+.download-btn:hover {
+  transform: translateY(-2px);
+}
+
+.download-btn {
+  margin-top: 15px;
+}
+
+/* Instructions */
+
+.download-instructions {
+  margin-top: 20px;
+
+  line-height: 1.9;
+
+  padding-left: 25px;
+}
+
+.download-instructions li {
+  margin-bottom: 15px;
+}
+
+.download-instructions pre {
+  margin-top: 10px;
+
+  padding: 12px;
+
+  border-radius: 10px;
+
+  overflow-x: auto;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  color: #7fffd4;
+
+  font-family: monospace;
+}
+
+.download-instructions ul {
+  margin-top: 10px;
+}
+
+.download-instructions strong {
+  color: #64d8b3;
+}
+
+@media (max-width: 768px) {
+  .download-table {
+    display: block;
+    overflow-x: auto;
+  }
+}

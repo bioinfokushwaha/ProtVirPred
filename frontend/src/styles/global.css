@@ -1,0 +1,388 @@
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #0a1425 0%, #1a2847 50%, #0d1b2a 100%);
+  color: white;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(13, 27, 42, 0.4);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #00c6ff;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar-links a:hover {
+  color: #00d4ff;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+.hero p {
+  font-size: 18px;
+  color: #b9c7d8;
+}
+
+.footer {
+  text-align: center;
+  padding: 30px;
+  background: rgba(13, 27, 42, 0.4);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #b9c7d8;
+  margin-top: 60px;
+}
+
+.hero {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.hero-logo {
+  font-size: 120px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #c0d2e5;
+}
+
+.features-section {
+  padding: 60px 40px;
+  text-align: center;
+  background: transparent;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit,
+    minmax(250px,1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.feature-card {
+  background:
+    rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  border:
+    1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform:
+    translateY(-10px);
+  border-color:
+    #00C6FF;
+  box-shadow:
+    0 0 25px rgba(0,198,255,0.25);
+}
+
+.feature-icon {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.about-platform {
+  padding: 60px 40px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.about-platform h2 {
+  margin-bottom: 20px;
+}
+
+.about-platform p {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.hero {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+
+/* WITH GLASS CARD */
+/*
+.hero-overlay {
+  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 35px 50px;
+  border-radius: 30px;
+  max-width: 1100px;
+  box-shadow:
+    0 0 25px rgba(0,198,255,0.10);
+}
+*/
+/* WITHOUT GLASS CARD */
+
+.hero-overlay {
+  background: transparent;
+  border: none;
+  backdrop-filter: none;
+  box-shadow: none;
+  padding: 15px 60px;
+  max-width: 1100px;
+}
+
+.niab-logo {
+  width: 180px;
+  margin-bottom: 25px;
+  filter:
+    drop-shadow(
+      0 0 15px
+      rgba(0,255,255,0.3)
+    );
+}
+
+.hero h1 {
+  font-size: 90px;
+  color: #00C6FF;
+  margin-bottom: 5px;
+  text-shadow:
+    0 0 20px rgba(0,198,255,0.3);
+}
+
+.hero h2 {
+  font-size: 32px;
+  color: white;
+  margin-top: -20px;
+  margin-bottom: 0px;
+}
+
+.result-dashboard {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: fadeIn 0.8s ease;
+}
+
+.glass-card {
+  background:
+    rgba(255,255,255,0.08);
+  backdrop-filter:
+    blur(12px);
+  border:
+    1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.badge-virulent {
+  background: #16a34a;
+  color: white;
+  padding: 12px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.badge-safe {
+  background: #dc2626;
+  color: white;
+  padding: 12px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.confidence-bar {
+  height: 14px;
+  border-radius: 50px;
+  overflow: hidden;
+  background:
+    rgba(255,255,255,0.1);
+}
+.confidence-fill {
+  height: 100%;
+  background:
+    linear-gradient(
+      90deg,
+      #22c55e,
+      #4ade80
+    );
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform:
+      translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform:
+      translateY(0);
+  }
+}
+
+.niab-banner {
+  text-align: center;
+  padding: 12px;
+  background:
+    rgba(255,255,255,0.05);
+  color: #9fe7ff;
+  border-bottom:
+    1px solid rgba(255,255,255,0.08);
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.hero-app-logo {
+  width: 820px;
+  max-width: 90%;
+  margin-bottom: 0px;
+  filter:
+    drop-shadow(
+      0 0 25px rgba(0,198,255,0.5)
+    );
+}
+.dashboard-grid {
+  display: grid;
+  grid-template-columns:
+    1fr 1fr;
+  gap: 25px;
+  margin-top: 30px;
+}
+.glass-card {
+  background:
+    rgba(255,255,255,0.06);
+  backdrop-filter:
+    blur(15px);
+  border:
+    1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 24px;
+  transition: 0.3s ease;
+}
+.glass-card:hover {
+  transform:
+    translateY(-4px);
+  box-shadow:
+    0 0 25px rgba(0,198,255,0.15);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.navbar-logo-img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.navbar-logo-text {
+  font-size: 20px;
+  font-weight: 700;
+  color: #00c6ff;
+}
+
+.prediction-page {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.prediction-page textarea {
+  width: 100%;
+  margin-top: 10px;
+  padding: 15px;
+  border-radius: 12px;
+  background:
+    rgba(255,255,255,0.05);
+  color: white;
+  border:
+    1px solid rgba(255,255,255,0.1);
+}
+
+.prediction-page select {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  background: white;
+  color: black;
+  font-weight: 600;
+}
+
+.prediction-page select option {
+  color: black;
+  background: white;
+}
+
+.predict-btn {
+  background:
+    linear-gradient(
+      135deg,
+      #00c6ff,
+      #00ffcc
+    );
+  border: none;
+  padding: 15px;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.predict-btn:hover {
+  transform:
+    translateY(-2px);
+}
+
+.clickable-card {
+  cursor: pointer;
+}
+
+.clickable-card:hover {
+  transform: translateY(-10px);
+  border-color: #00C6FF;
+  box-shadow: 0 0 25px rgba(0,198,255,0.25);
+}

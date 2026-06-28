@@ -1,0 +1,34 @@
+.app-background {
+
+  min-height: 100vh;
+
+  background-image:
+    url("../assets/background/background.png");
+
+  background-size: cover;
+
+  background-position: center;
+
+  background-repeat: no-repeat;
+
+  background-attachment: fixed;
+}
+
+.app-background::before {
+
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.05
+    );
+
+  pointer-events: none;
+}
