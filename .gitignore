@@ -1,14 +1,47 @@
+# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
+# Virtual environments
+venv/
+env/
+.paravirpred/
+.paravirpred_env/
+
+# Node
 node_modules/
 dist/
 
+# Environment variables
 .env
 
+# Temporary folders
 backend/downloads/
 backend/temp/
 
+# Prediction outputs
+backend/exports/*.csv
+backend/exports/*.xlsx
+backend/exports/*.zip
+
+# Logs
+*.log
+
+# VSCode
 .vscode/
 
-*.log
+# Linux
+*.swp
+.DS_Store
+
+# HuggingFace cache
+.cache/
+huggingface/
+
+# Model files (optional)
+*.pt
+*.pth
+*.bin
+*.safetensors

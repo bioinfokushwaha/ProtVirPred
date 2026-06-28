@@ -1,20 +1,29 @@
+import gc
 import torch
 import numpy as np
 
 from app.services.model_loader import (
     get_model
 )
-
 from app.services.batch_feature_builder import (
     build_batch_features
 )
+from app.services.device_service import (
+    DEVICE
+)
 
+def clear_gpu_memory():
+
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+        torch.cuda.ipc_collect()
+
+    gc.collect()
 
 def predict_batch(
     sequences,
     model_name
 ):
-
     model_info = get_model(
         model_name
     )
@@ -22,7 +31,6 @@ def predict_batch(
     model = model_info["model"]
     scaler = model_info["scaler"]
     model_type = model_info["type"]
-
     features = build_batch_features(
         sequences,
         model_name
@@ -36,21 +44,37 @@ def predict_batch(
 
     results = []
 
-    # DNN
     if model_type == "dnn":
+        model.to(
+            DEVICE
+        )
 
         with torch.no_grad():
 
             x = torch.tensor(
                 features,
-                dtype=torch.float32
+                dtype=torch.float32,
+                device=DEVICE
             )
 
-            probs = model(x).cpu().numpy()
+            probs = (
+                model(x)
+                .detach()
+                .cpu()
+                .numpy()
+            )
+
+        del x
+        model.to(
+            "cpu"
+        )
+
+        clear_gpu_memory()
 
         for prob in probs:
-
-            p = float(prob[0])
+            p = float(
+                prob[0]
+            )
 
             results.append(
                 {
@@ -60,11 +84,13 @@ def predict_batch(
                         else "Non-Virulent",
 
                     "probability":
-                        round(p, 4)
+                        round(
+                            p,
+                            4
+                        )
                 }
             )
 
-    # SVM / XGB
     else:
 
         probs = model.predict_proba(
@@ -81,8 +107,15 @@ def predict_batch(
                         else "Non-Virulent",
 
                     "probability":
-                        round(float(p), 4)
+                        round(
+                            float(p),
+                            4
+                        )
                 }
             )
+
+    del features
+
+    gc.collect()
 
     return results

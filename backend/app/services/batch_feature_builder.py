@@ -1,32 +1,34 @@
 import numpy as np
+import gc
 
 from app.services.batch_embedding_service import (
     generate_esm2_embeddings_batch,
     generate_prott5_embeddings_batch
 )
-
 from app.services.batch_physchem_service import (
     calculate_physchem_batch
 )
-
 
 def build_batch_features(
     sequences,
     combination
 ):
-
-    esm = generate_esm2_embeddings_batch(
-        sequences
-    )
-
-    t5 = generate_prott5_embeddings_batch(
-        sequences
-    )
-
-    physchem = calculate_physchem_batch(
-        sequences
-    )
-
+    esm = None 
+    t5 = None
+    if "esm2" in combination:
+        esm = generate_esm2_embeddings_batch(
+            sequences
+        )
+    if "prott5" in combination:
+        t5 = generate_prott5_embeddings_batch(
+            sequences
+        )
+    physchem = None
+    if "physchem" in combination:
+        physchem = calculate_physchem_batch(
+            sequences
+        )
+        
     features = []
 
     for i in range(len(sequences)):
@@ -83,5 +85,10 @@ def build_batch_features(
             )
 
         features.append(feature)
+        
+    del esm 
+    del t5 
+    del physchem 
+    gc.collect()
 
-    return np.array(features)
+    return np.array(features, dtype=np.float32)

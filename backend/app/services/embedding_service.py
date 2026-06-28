@@ -2,6 +2,7 @@ import torch
 import esm
 import numpy as np
 import re
+import gc
 
 from transformers import (
     T5Tokenizer,
@@ -20,6 +21,13 @@ BATCH_CONVERTER = None
 PROTT5_MODEL = None
 PROTT5_TOKENIZER = None
 
+def clear_gpu_memory():
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+        torch.cuda.ipc_collect()
+    gc.collect()
+    
+
 def load_esm2():
     
     global ESM_MODEL
@@ -34,9 +42,7 @@ def load_esm2():
 
     ESM_MODEL.eval()
 
-    ESM_MODEL.to(
-        DEVICE
-    )
+    ESM_MODEL.to("cpu")
 
     BATCH_CONVERTER = (
         ESM_ALPHABET.get_batch_converter()
@@ -70,9 +76,7 @@ def load_prott5():
     print("✓ ProtT5 model loaded")
     PROTT5_MODEL.eval()
     print("Moving ProtT5 to GPU...")
-    PROTT5_MODEL.to(
-        DEVICE
-    )
+    PROTT5_MODEL.to("cpu")
     print("✓ ProtT5 Loaded")
 
 def load_embedding_models():    
@@ -80,6 +84,8 @@ def load_embedding_models():
     load_prott5()
     
 def generate_esm2_embedding(sequence):
+
+    ESM_MODEL.to(DEVICE)
 
     fasta_data = [
         ("protein", sequence)
@@ -91,7 +97,7 @@ def generate_esm2_embedding(sequence):
 
     tokens = tokens[:, :1022].to(DEVICE)
 
-    with torch.no_grad():
+    with torch.inference_mode():
 
         results = ESM_MODEL(
             tokens,
@@ -118,9 +124,19 @@ def generate_esm2_embedding(sequence):
         .numpy()
     )
 
+    ESM_MODEL.to("cpu")
+
+    del tokens
+    del results
+    del token_repr
+
+    clear_gpu_memory()
+
     return embedding
     
 def generate_prott5_embedding(sequence):
+
+    PROTT5_MODEL.to(DEVICE)
 
     sequence = " ".join(
         list(
@@ -149,7 +165,7 @@ def generate_prott5_embedding(sequence):
         "attention_mask"
     ].to(DEVICE)
 
-    with torch.no_grad():
+    with torch.inference_mode():
 
         outputs = PROTT5_MODEL(
             input_ids=input_ids,
@@ -171,5 +187,15 @@ def generate_prott5_embedding(sequence):
         .cpu()
         .numpy()
     )
+
+    PROTT5_MODEL.to("cpu")
+
+    del inputs
+    del input_ids
+    del attention_mask
+    del outputs
+    del last_hidden
+
+    clear_gpu_memory()
 
     return embedding

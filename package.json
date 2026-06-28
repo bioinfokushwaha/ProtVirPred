@@ -2,9 +2,17 @@
   "name": "paravirpred",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"cd backend && uvicorn app.main:app --reload\" \"cd frontend && npm run dev\""
+    "dev": "python main.py --reload",
+    "start": "python main.py",
+    "start:skip-build": "python main.py --skip-frontend-build"
   },
-  "devDependencies": {
-    "concurrently": "^9.2.1"
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^9.1.1",
+    "@mui/material": "^9.1.1",
+    "axios": "^1.18.0",
+    "react-router-dom": "^7.18.0",
+    "recharts": "^3.8.1"
   }
 }

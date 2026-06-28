@@ -1,5 +1,4 @@
 from fastapi import APIRouter
-import torch
 
 router = APIRouter()
 
@@ -29,6 +28,15 @@ def models():
 
 @router.get("/system-info")
 def system_info():
+
+    try:
+        import torch
+    except ImportError:
+        return {
+            "device": "cpu",
+            "cuda_available": False,
+            "warning": "torch is not installed"
+        }
 
     if torch.cuda.is_available():
 

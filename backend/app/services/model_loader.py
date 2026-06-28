@@ -3,12 +3,11 @@ import torch
 
 from app.models.deepdnn import VirulenceDNN
 from app.services.model_registry import MODEL_CONFIGS
+from app.services.device_service import DEVICE
 
 LOADED_MODELS = {}
 
-
 def load_all_models():
-
     global LOADED_MODELS
 
     for name, cfg in MODEL_CONFIGS.items():
@@ -19,7 +18,8 @@ def load_all_models():
 
             checkpoint = torch.load(
                 cfg["path"],
-                map_location="cpu"
+                map_location=DEVICE,
+                weights_only=False
             )
 
             model = VirulenceDNN(
@@ -29,6 +29,7 @@ def load_all_models():
             model.load_state_dict(
                 checkpoint["model"]
             )
+            model.to(DEVICE)
 
             model.eval()
 

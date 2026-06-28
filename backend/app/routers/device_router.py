@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
 from app.services.device_service import (
-    DEVICE
+    get_device
 )
 
 router = APIRouter()
@@ -11,5 +11,5 @@ router = APIRouter()
 def device_info():
 
     return {
-        "device": str(DEVICE)
+        "device": str(get_device())
     }
