@@ -39,7 +39,7 @@ def build_features(
         )
 
         return np.concatenate(
-            [esm, physchem]
+            [physchem, esm]
         )
 
     elif combination == "prott5_physchem":
@@ -49,7 +49,7 @@ def build_features(
         )
 
         return np.concatenate(
-            [t5, physchem]
+            [physchem, t5]
         )
 
     elif combination == "esm2_prott5":
@@ -76,13 +76,12 @@ def build_features(
             sequence
         )
 
-        return np.concatenate(
-            [
-                esm,
-                t5,
-                physchem
-            ]
-        )
+        return np.concatenate([
+            physchem,
+            esm,
+            t5
+        ])
+        
 
     raise ValueError(
         f"Unknown combination: {combination}"

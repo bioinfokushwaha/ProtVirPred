@@ -38,6 +38,8 @@ def predict_sequence(
         -1
     )
     if model_info["type"] == "dnn":
+        model = model.to(DEVICE)
+        model.eval()
 
         X = scaler.transform(X)
         X_tensor = torch.FloatTensor(

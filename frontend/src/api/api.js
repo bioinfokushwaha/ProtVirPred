@@ -1,9 +1,11 @@
-// frontend/src/api/api.js
-
 import axios from "axios";
 
+const BASE_URL =
+    import.meta.env.VITE_API_BASE_URL ||
+    `${window.location.origin}/ParaVirPred`;
+
 const api = axios.create({
-  baseURL: "/ParaVirPred"
+    baseURL: BASE_URL
 });
 
 export default api;

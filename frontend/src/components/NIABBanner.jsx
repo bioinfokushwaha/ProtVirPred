@@ -1,3 +1,4 @@
+/*
 function NIABBanner() {
 
   return (
@@ -15,3 +16,4 @@ function NIABBanner() {
 }
 
 export default NIABBanner;
+*/

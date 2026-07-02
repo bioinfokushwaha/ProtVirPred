@@ -3,7 +3,8 @@ import "../styles/download.css";
 function Download() {
 
   const API =
-      import.meta.env.VITE_API_BASE_URL || "";
+      import.meta.env.VITE_API_BASE_URL || 
+      `${window.location.origin}/ParaVirPred`;
 
   return (
 

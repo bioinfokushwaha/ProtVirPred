@@ -1,4 +1,4 @@
-import NIABBanner from "../components/NIABBanner";
+/*import NIABBanner from "../components/NIABBanner";*/
 import HeroSection from "../components/HeroSection";
 import FeatureCard from "../components/FeatureCard";
 
@@ -12,7 +12,7 @@ function Home() {
 
     <>
 
-      <NIABBanner />
+      {/* <NIABBanner /> */}
 
       <HeroSection />
 

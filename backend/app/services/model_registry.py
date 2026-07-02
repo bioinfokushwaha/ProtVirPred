@@ -13,7 +13,7 @@ MODEL_CONFIGS = {
     },
 
     "prott5_only": {
-        "type": "xgb",
+        "type": "svm",
         "path": "app/models/ProtT5_only/model.pkl",
         "input_dim": 1024
     },
@@ -25,7 +25,7 @@ MODEL_CONFIGS = {
     },
 
     "esm2_prott5": {
-        "type": "xgb",
+        "type": "svm",
         "path": "app/models/ESM2+ProtT5/model.pkl",
         "input_dim": 2304
     },

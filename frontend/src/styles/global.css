@@ -141,21 +141,6 @@ a {
   padding-bottom: 40px;
 }
 
-/* WITH GLASS CARD */
-/*
-.hero-overlay {
-  backdrop-filter: blur(15px);
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 35px 50px;
-  border-radius: 30px;
-  max-width: 1100px;
-  box-shadow:
-    0 0 25px rgba(0,198,255,0.10);
-}
-*/
-/* WITHOUT GLASS CARD */
-
 .hero-overlay {
   background: transparent;
   border: none;

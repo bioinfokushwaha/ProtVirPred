@@ -30,44 +30,42 @@ function About() {
 
           <p>
 
-            Computational target identification is transforming modern
-            drug discovery and precision medicine by enabling the rapid
-            prioritization of biologically important proteins from
-            large-scale genomic and proteomic datasets.
+            Computational approaches to target identification are transforming drug discovery 
+            and precision medicine by allowing researchers to identify and prioritise important 
+            biological targets from large-scale genomic and proteomic datasets.
 
-            Parasitic diseases caused by medically and economically
-            significant protozoan pathogens continue to impose major
-            public health and livestock production burdens worldwide.
+            Parasitic diseases caused by protozoan pathogens remain a major challenge for both 
+            human health and livestock productivity, causing huge economic losses. Therefore, the 
+            development of effective therapeutic and preventive strategies is needed today.
 
-            Traditional discovery of virulence factors, drug targets,
-            and vaccine candidates depends heavily on labor-intensive,
-            expensive, and time-consuming laboratory screening methods.
-
-          </p>
-
-          <p>
-
-            Existing subtractive proteomics pipelines primarily rely on
-            sequence similarity searches against host proteomes.
-            Although useful, these approaches often fail to identify
-            novel virulence-associated proteins that possess low
-            sequence similarity but retain important structural or
-            functional characteristics.
-
-            ParaVirPred was developed to overcome these limitations by
-            combining modern protein language models, structural
-            bioinformatics, and machine learning into a unified
-            high-throughput prediction framework.
+            However, the conventional identification of virulence factors, drug targets, and vaccine 
+            candidates largely depends on experimental screening, which is often costly, time-consuming, 
+            and resource-intensive.
 
           </p>
 
           <p>
 
-            By leveraging deep biological representations learned from
-            billions of protein sequences, the platform can recognize
-            subtle evolutionary and structural patterns associated with
-            pathogenicity and virulence, enabling rapid proteome-scale
-            screening of parasite proteins.
+            Current subtractive proteomics approaches primarily rely on sequence-similarity-based 
+            comparisons with host proteins to identify potential therapeutic targets. While effective 
+            in many cases, these methods may overlook functionally important proteins that show limited 
+            sequence similarity but maintain conserved structural or biological features.
+
+            To address this limitation, ParaVirPred was developed as an integrated computational platform 
+            that combines large protein language models, structural insights, and machine learning 
+            techniques for large-scale virulence prediction.
+
+          </p>
+
+          <p>
+
+            Protein language models learn complex evolutionary, structural, and functional patterns 
+            from billions of protein sequences and provide deeper representations of protein 
+            characteristics beyond conventional sequence-based analyses. ParaVirPred utilises these 
+            advanced representations to detect potential virulence-associated proteins with high accuracy, 
+            enabling rapid and systematic screening of parasite proteomes. The developed computational 
+            framework provides researchers with a powerful tool to accelerate the discovery of novel 
+            therapeutic targets and improve our understanding of parasite pathogenic mechanisms.
 
           </p>
 
@@ -76,16 +74,14 @@ function About() {
         <section className="about-section">
 
           <h2>
-            🖥️ Architectural Framework & Technical Specifications
+            🖥️ Framework of Protein Language Model and Technical Specifications
           </h2>
 
           <p>
 
-            The computational architecture of ParaVirPred moves beyond
-            conventional alignment-based approaches and adopts a
-            multi-modal machine learning framework integrating deep
-            biological representations with classical biochemical
-            descriptors.
+            The computational architecture of ParaVirPred moves beyond conventional alignment-based 
+            approaches by adopting a multimodal machine learning framework that integrates deep 
+            biological representations with classical biochemical descriptors.
 
           </p>
 
@@ -149,48 +145,31 @@ function About() {
         <section className="about-section">
 
           <h2>
-            📊 Benchmarking Framework & Performance Topology
+            📊 Systematic Benchmarking of Classical Machine Learning and Deep Neural Networks Using Protein Language Model Features for Virulence Prediction
           </h2>
 
           <p>
 
-            ParaVirPred was developed and evaluated using a curated
-            benchmark dataset containing approximately 8,928 protein
-            profiles representing virulent and non-virulent classes.
+            ParaVirPred was developed and systematically evaluated on a carefully curated benchmark 
+            dataset comprising approximately 8,928 protein sequences representing both virulent (1288) 
+            and non-virulent (7640) proteins. To identify the most effective predictive strategy, 
+            a comprehensive comparison of multiple machine learning and deep learning algorithms was 
+            performed, including Logistic Regression, Support Vector Machine (SVM), Random Forest, 
+            XGBoost, Multi-Layer Perceptron (MLP), Naive Bayes, K-Nearest Neighbours (KNN), and Deep 
+            Neural Networks (DNN).
 
           </p>
 
           <p>
 
-            Multiple machine learning algorithms were systematically
-            compared, including Logistic Regression, Support Vector
-            Machines (SVM), Random Forest, XGBoost, Multi-Layer
-            Perceptron (MLP), Naive Bayes, K-Nearest Neighbors (KNN),
-            and Deep Neural Networks (DNN).
-
-          </p>
-
-          <p>
-
-            Six distinct feature combinations involving ProtT5
-            embeddings, ESM2 embeddings, physicochemical descriptors,
-            and hybrid feature spaces were benchmarked using extensive
-            validation experiments.
-
-          </p>
-
-          <p>
-
-            The combination of
-            <span className="about-highlight">
-              {" "}ProtT5 Embeddings + Physicochemical Features
-            </span>
-            {" "}
-            consistently emerged as the best-performing feature space,
-            while SVM and DNN architectures demonstrated superior
-            predictive capability across multiple evaluation metrics
-            including MCC, Accuracy, Sensitivity, Specificity,
-            Precision, and F1 Score.
+            A six-feature representation was generated and assessed for predictive performance, 
+            including ProtT5 and ESM2 embeddings, physicochemical properties, and their combined 
+            hybrid feature spaces. Among the evaluated approaches, the ProtT5 embedding, combined 
+            with physicochemical descriptors, consistently yielded the most informative representation 
+            for virulence classification. Furthermore, SVM and DNN models showed robust, superior 
+            performance across multiple evaluation criteria, including Matthews correlation coefficient 
+            (MCC), accuracy, sensitivity, specificity, precision, and F1 Score, demonstrating their 
+            effectiveness in reliably identifying virulence-associated proteins.
 
           </p>
 
@@ -199,7 +178,7 @@ function About() {
         <section className="about-section">
 
           <h2>
-            🗺️ Unified Methodology Workflow
+            🗺️ Methodology: Data Processing Workflow
           </h2>
 
           <p>
